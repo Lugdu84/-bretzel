@@ -32,7 +32,7 @@ puts "creates bikes"
     name: Faker::Sports::Basketball.player,
     description:Faker::Lorem.paragraph ,
     price: rand(10..250),
-    photo: "assets/images/#{i}.jpg",
+    photo: "#{i}.jpg",
     user: users.sample,
   )
   puts "#{i + 1}. #{velo.name}"

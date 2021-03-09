@@ -1,0 +1,17 @@
+<h1>INDEX</h1>
+<div>
+  <div class="row">
+    <% @bikes.each do |bike| %>
+    <div class="card col-4 m-3" style="width: 18rem;">
+      <%= image_tag bike.photo %>
+      <div class="card-body">
+        <h5 class="card-title"><%= bike.name %></h5>
+        <p class="card-text"> <%= bike.description %> </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <%= bike.price %> € </li>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+</div>
