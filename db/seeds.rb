@@ -27,7 +27,7 @@ end
 puts "Finished create users"
 
 puts "creates bikes"
-10.times do |i|
+11.times do |i|
   velo = Bike.create!(
     name: Faker::Sports::Basketball.player,
     description:Faker::Lorem.paragraph ,
