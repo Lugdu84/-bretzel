@@ -1,17 +1,22 @@
 <h1 class="text-center">Nos joilis vélos à louer !!!!!</h1>
-<div>
-  <div class="row">
+<div class="container-map">
+  <div class="container-fluid" style="width: 400px">
     <% @bikes.each do |bike| %>
-    <div class="card col-4 m-3" style="width: 18rem;">
-        <%= image_tag (bike.photo), class: "img-thumbnail" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= bike.name %></h5>
-        <p class="card-text"> <%= bike.description %> </p>
+      <div class="card m-3" style="width: 18rem;">
+        <%= image_tag (bike.photo), class: "" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= bike.name %></h5>
+          <p class="card-text"> <%= bike.description %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <%= bike.price %> € </li>
+        </ul>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> <%= bike.price %> € </li>
-      </ul>
-    </div>
     <% end %>
   </div>
+  <div id="map" class="map-bikes"
+       style="width: 100%; height: 100vh;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+

@@ -14,6 +14,7 @@ puts "destroy all users"
 User.destroy_all
 
 users = []
+address = %w[Peynier Aubagne Cassis Gémenos Napollon Peypin Roquevaire Auriol Allauch Cadolive Fuveau]
 
 5.times do |i|
   user = User.create!(
@@ -33,7 +34,7 @@ puts "creates bikes"
     price: rand(10..250),
     photo: "#{i}.jpg",
     user: users.sample,
-    address: 'Lyon'
+    address: address[i]
   )
   puts "#{i + 1}. #{velo.name}"
 end
