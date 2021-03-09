@@ -33,6 +33,7 @@ puts "creates bikes"
     price: rand(10..250),
     photo: "#{i}.jpg",
     user: users.sample,
+    address: 'Lyon'
   )
   puts "#{i + 1}. #{velo.name}"
 end
