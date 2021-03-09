@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-require 'Bike'
 
 puts "destroy all bikes"
 Bike.destroy_all
