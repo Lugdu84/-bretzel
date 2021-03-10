@@ -3,7 +3,7 @@
   <div class="container-fluid" style="width: 400px">
     <% @bikes.each do |bike| %>
       <div class="card m-3" style="width: 100%">
-        <%= image_tag (bike.photo), class: "" %>
+        <%= image_tag (bike.photo), class: "img-thumbnail" %>
         <div class="card-body">
           <h5 class="card-title"><%= bike.name %></h5>
           <p class="card-text"> <%= bike.description %> </p>
