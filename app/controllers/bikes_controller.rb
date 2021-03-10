@@ -8,7 +8,7 @@ class BikesController < ApplicationController
         lat: bike.latitude,
         lng: bike.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
-        image_url: helpers.asset_url('marker.png')
+        image_url: helpers.asset_url('picto.png')
       }
     end
   end
