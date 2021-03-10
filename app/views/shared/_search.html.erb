@@ -1,7 +1,9 @@
-<div class="input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+<div class="input-group rounded search_style">
+  <input type="search" class="form-control rounded" placeholder="Entrer une ville" aria-label="Search"
     aria-describedby="search-addon" />
   <span class="input-group-text border-0" id="search-addon">
+    <%= link_to bikes_path do  %>
     <i class="fas fa-search"></i>
+    <% end %>
   </span>
 </div>
