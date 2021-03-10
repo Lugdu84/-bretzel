@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_200606) do
+ActiveRecord::Schema.define(version: 2021_03_10_201905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2021_03_10_200606) do
     t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "booking_start"
+    t.datetime "booking_end"
+    t.bigint "user_id", null: false
+    t.bigint "bike_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bike_id"], name: "index_bookings_on_bike_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "bike_id", null: false
@@ -44,6 +55,8 @@ ActiveRecord::Schema.define(version: 2021_03_10_200606) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "booking_id", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -60,7 +73,10 @@ ActiveRecord::Schema.define(version: 2021_03_10_200606) do
   end
 
   add_foreign_key "bikes", "users"
+  add_foreign_key "bookings", "bikes"
+  add_foreign_key "bookings", "users"
   add_foreign_key "favorites", "bikes"
   add_foreign_key "favorites", "users"
+  add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
 end
