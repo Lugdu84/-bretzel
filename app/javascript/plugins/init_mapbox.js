@@ -12,11 +12,12 @@ const addMarkers = (map, markers) => {
         // Create a HTML element for your custom marker
         const element = document.createElement('div');
         element.className = 'marker';
-        //element.style.backgroundImage = url('${marker.image_url}');
+        element.style.backgroundImage = `url('${marker.image_url}')`;
         element.style.backgroundSize = 'contain';
         element.style.width = '25px';
         element.style.height = '25px';
-        new mapboxgl.Marker()
+
+        new mapboxgl.Marker(element)
             .setLngLat([ marker.lng, marker.lat ])
             .setPopup(popup)
             .addTo(map);
@@ -35,7 +36,8 @@ const initMapbox = () => {
         mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
+            style: 'mapbox://styles/mapbox/streets-v11',
+            zoom: 8
         });
         const markers = JSON.parse(mapElement.dataset.markers);
         fitMapToMarkers(map, markers);
