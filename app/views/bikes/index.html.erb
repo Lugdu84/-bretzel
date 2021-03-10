@@ -1,23 +1,23 @@
 <br>
  <%= render 'shared/search' %>
-  <br>
+<br>
 <div class="content">
   <div class="cards">
     <% @bikes.each do |bike| %>
-    <div class="cardbike">
-      <div class="card-trip">
-        <%= image_tag bike.photo %>
-      </div>
-      <div class="card-trip-infos">
+      <div class="cardbike">
+        <div class="card-trip">
+          <%= image_tag bike.photo %>
+        </div>
+        <div class="card-trip-infos">
           <h3> <%= bike.name %> </h3>
           <p> <%= bike.description %> </p>
           <p class="card-trip-pricing"> <%= bike.price %> €</p>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
   <div id="map"
-    style="width: 40%; height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+       style="width: 40%; height: 100vh;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
