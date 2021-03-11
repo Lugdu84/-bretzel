@@ -14,12 +14,12 @@ puts "destroy all users"
 User.destroy_all
 
 users = []
-address = %w[Peynier Aubagne Cassis Gémenos Napollon Peypin Roquevaire Auriol Allauch Cadolive Fuveau]
+address = %w[Peynier Aubagne Cassis Gémenos Napollon Peypin Roquevaire Auriol Allauch Cadolive Fuveau Lyon]
 
 5.times do |i|
   user = User.create!(
     email: Faker::Internet.email,
-    password: 'azertyss'
+    password: 'azerty'
   )
   users << user
   puts "#{i + 1}. #{user.email}"
@@ -27,7 +27,7 @@ end
 puts "Finished create users"
 
 puts "creates bikes"
-11.times do |i|
+12.times do |i|
   velo = Bike.create!(
     name: Faker::Sports::Basketball.player,
     description:Faker::Lorem.paragraph ,
