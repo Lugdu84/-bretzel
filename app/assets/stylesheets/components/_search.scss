@@ -1,5 +1,5 @@
 .search_style{
-  width: 500px;
+  width: 400px;
   margin: auto;
   margin-top: 12px;
 }
@@ -15,4 +15,11 @@ color : #fff;
 .input-group-text:hover{
   background-color: #ececec;
   text-decoration:none;
+}
+
+.search-geo-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }

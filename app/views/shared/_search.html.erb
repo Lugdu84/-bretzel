@@ -1,4 +1,4 @@
-<div class="container" >
+<div class="search-geo-controls">
   <%= form_tag bikes_path, method: :get, class: "input-group rounded search_style" do %>
     <%= text_field_tag :query,
                        params[:query],
@@ -8,5 +8,6 @@
     <%= button_tag(type: 'submit', class:'btn btn-info') do %>
       <i class="fas fa-search"></i>
     <% end %>
+    <button id="locate-me" class="btn btn-info ml-3" style="width: 200px;">Me géolocaliser</button>
   <% end %>
 </div>
