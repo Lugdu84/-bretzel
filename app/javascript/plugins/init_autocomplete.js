@@ -32,8 +32,8 @@ const initAutocomplete = () => {
             let coords = position.coords;
             const lat = coords.latitude.toFixed(6);
             const lng = coords.longitude.toFixed(6);
-            afterLocal();
             placesAutoComplete.reverse(lat + ',' + lng);
+            afterLocal();
         }
         navigator.geolocation.getCurrentPosition(success, error);
     });
