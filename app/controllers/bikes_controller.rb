@@ -2,7 +2,13 @@ class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @bikes = Bike.all
+    if params[:query].present?
+    # on a le nom d'une ville params[:query]
+    # Faire une requête pour trouver les marquers proches de cette ville
+      @bikes = Bike.near(params[:query], 50)
+    else
+      @bikes = Bike.near('Aubagne', 50)
+    end
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,

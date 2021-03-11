@@ -1,9 +1,19 @@
-<div class="input-group rounded search_style">
-  <input type="search" class="form-control rounded" placeholder="Choisissez votre ville pour louer votre vélo" aria-label="Search"
+<!--<form action="/index" method="get" class="input-group rounded search_style">
+  <input type="search" class="form-control rounded" id="search-bikes" placeholder="Choisissez votre ville pour louer votre vélo" aria-label="Search"
     aria-describedby="search-bikes" />
-  <span class="input-group-text border-0" id="search-bikes">
-    <%= link_to bikes_path do  %>
+  <span class="input-group-text border-0">
+    <%#= link_to bikes_path do  %>
     <i class="fas fa-search"></i>
-    <% end %>
+    <%# end %>
   </span>
-</div>
+</form>-->
+
+
+<%= form_tag bikes_path, method: :get, class: "input-group rounded search_style" do %>
+  <%= text_field_tag :query,
+                     params[:query],
+                     class: "form-control rounded",
+                     placeholder: "Choisissez votre ville pour louer votre vélo"
+  %>
+  <%= submit_tag "Trouvez son vélo !", class:"btn btn-primary" %>
+<% end %>

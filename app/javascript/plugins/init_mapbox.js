@@ -40,8 +40,9 @@ const initMapbox = () => {
             style: 'mapbox://styles/mapbox/streets-v11',
             zoom: 8
         });
-        map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl }));
+        // Contrôle mis de côté, car utilisation de la search barre
+        //map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+        //    mapboxgl: mapboxgl }));
         const markers = JSON.parse(mapElement.dataset.markers);
         fitMapToMarkers(map, markers);
         addMarkers(map, markers);
