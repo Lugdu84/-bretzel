@@ -15,5 +15,7 @@
                      class: "form-control rounded",
                      placeholder: "Choisissez votre ville pour louer votre vélo"
   %>
-  <%= submit_tag "Trouvez son vélo !", class:"btn btn-primary" %>
+  <%= button_tag(type: 'submit') do %>
+    Trouvez son vélo ! <i class="fas fa-search"></i>
+  <% end %>
 <% end %>
