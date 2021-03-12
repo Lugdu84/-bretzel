@@ -1,5 +1,5 @@
 .search_style{
-  width: 500px;
+  width: 800px;
   margin: auto;
   margin-top: 12px;
 }
@@ -21,5 +21,9 @@ color : #fff;
   display: flex;
   flex-direction: row;
   //justify-content: space-between;
-  //align-items: flex-start;
+  align-items: flex-start;
+}
+
+.size-text {
+  width: 600px;
 }
