@@ -16,3 +16,10 @@ color : #fff;
   background-color: #ececec;
   text-decoration:none;
 }
+
+.search-geo-controls {
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-between;
+  //align-items: flex-start;
+}
