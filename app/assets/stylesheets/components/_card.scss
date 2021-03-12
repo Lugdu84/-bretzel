@@ -67,19 +67,20 @@
   padding-left: 15px;
 }
 .btn-ghost {
-  color: #101010;
+  color: #fff;
   padding: 4px 15px;
   font-weight: bold;
   padding-bottom: 8px;
   width: 100%;
-  background-color:#FFDB6B;
   font-family: "Squada One";
-  color: #fff;
+  color:#101010;
   font-size: 20px;
-  border-radius: 0px 0px 10px 0px;
+}
+.btn-ghost:hover {
+  color: #fff
 }
 .name-description{
-  padding-left: 15px;
+ padding-left: 15px;
 }
 
 .adding padding{
