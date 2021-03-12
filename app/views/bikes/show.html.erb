@@ -1,5 +1,22 @@
-<%= simple_form_for [ @bike, @booking ]  do |f| %>
-  <%= f.input :booking_start %>
-  <%= f.input :booking_end %>
-  <%= f.submit "book the bike", class: "btn btn-primary" %>
-<% end %>
+<div id="description-show">
+<h3> <%= @bike.name %> </h3>
+<p> <%= @bike.description %> </p>
+</div>
+<div class="star">
+  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<i class="far fa-heart" id="icone-add-like-show"></i>
+<div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+</div>
+<div class="global">
+    <div class="gauche">
+       <p class="description-longue">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercice ullamco laboris nisi ut aliquip ex ea commodo conséquat. Duis aute irure dolor in reprehenderit in voluptateit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sauf sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="droite">
+      <%= simple_form_for [ @bike, @booking ]  do |f| %>
+      <%= f.input :booking_start %>
+      <%= f.input :booking_end %>
+      <%= f.submit "book the bike", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
