@@ -16,7 +16,8 @@
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
             </div>
           <p class="card-trip-pricing"> <%= bike.price %> €</p>
-          <a class="btn btn-ghost" href="#">Découvrir</a>
+          <!-- <a class="btn btn-ghost" href="#">Découvrir</a> -->
+          <%= link_to "découvrir", bike, class: "btn btn-ghost" %>
      </div>
       </div>
     <% end %>
