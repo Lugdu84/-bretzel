@@ -3,8 +3,6 @@ class BikesController < ApplicationController
 
   def index
     if params[:query].present?
-    # on a le nom d'une ville params[:query]
-    # Faire une requête pour trouver les marquers proches de cette ville
       @bikes = Bike.near(params[:query], 50)
     else
       @bikes = Bike.near('Aubagne', 50)

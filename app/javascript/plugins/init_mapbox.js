@@ -44,8 +44,16 @@ const initMapbox = () => {
         //map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
         //    mapboxgl: mapboxgl }));
         const markers = JSON.parse(mapElement.dataset.markers);
-        fitMapToMarkers(map, markers);
-        addMarkers(map, markers);
+        if (markers.length > 0) {
+            fitMapToMarkers(map, markers);
+            addMarkers(map, markers);
+        }
+        else {
+            console.log('markers vides...');
+            map.flyTo({
+                center: [5.40, 43],
+            })
+        }
     }
 };
 
