@@ -6,7 +6,7 @@
 
 <body>
   <%= render 'shared/search' %>
-  <h3>Mes vélos</h3>
+  <h3>Mes vélos:</h3>
  <!--  <br>
   <a class="btn btn-page4" href="#">Précédents</a>
   <a class="btn btn-page4" href="#">A venir</a>
@@ -15,17 +15,17 @@
   <br> -->
 <nav>
   <% @bookings.each do |booking|  %>
-    <div class="card-trip">
-          <img src="http://localhost:3000/assets/0-c042248a8122d6a4a6a3e463eab04e66a3930d630f619e4d78ae34a41037f42d.jpg" />
-          <div class="card-trip-infos">
+    <div class="card-trip-order">
+          <%= image_tag booking.bike.photo %>
+          <div class="card-trip-order-infos">
             <div>
               <h2><%= booking.bike.name %></h2>
               <p><%= booking.bike.description %></p>
             </div>
             <br>
-            <%= render 'shared/ratingstars' %>
             <!-- <a class="btn btn-validate" href="#">Envoyer</a> -->
           </div>
+          <%= render 'shared/ratingstars' %>
         </div>
   <% end %>
 </nav>
